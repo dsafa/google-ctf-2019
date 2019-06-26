@@ -1,0 +1,200 @@
+push 0
+push 17488
+push 16758
+push 16599
+push 16285
+push 16094
+push 15505
+push 15417
+push 14832
+push 14450
+push 13893
+push 13926
+push 13437
+push 12833
+push 12741
+push 12533
+push 11504
+push 11342
+push 10503
+push 10550
+push 10319
+push 975
+push 1007
+push 892
+push 893
+push 660
+push 743
+push 267
+push 344
+push 264
+push 339
+push 208
+push 216
+push 242
+push 172
+push 74
+push 49
+push 119
+push 113
+push 119
+push 106
+pop acc1
+push 1
+push 106
+push 389
+push 1
+jump_to
+xor
+print_top
+push 1
+add
+pop acc2
+if_not_zero
+jump_to
+push 98426
+push 97850
+push 97604
+push 97280
+push 96815
+push 96443
+push 96354
+push 95934
+push 94865
+push 94952
+push 94669
+push 94440
+push 93969
+push 93766
+pop acc1
+push 99
+push 93766
+push 568
+push 99
+jump_to
+xor
+print_top
+push 1
+add
+pop acc2
+if_not_zero
+jump_to
+push 101141058
+push 101060206
+push 101030055
+push 100998966
+push 100887990
+push 100767085
+push 100707036
+push 100656111
+push 100404094
+push 100160922
+push 100131019
+push 100111100
+push 100059926
+push 100049982
+push 100030045
+push 9989997
+push 9981858
+push 9980815
+push 9978842
+push 9965794
+push 9957564
+push 9938304
+push 9935427
+push 9932289
+push 9931494
+push 9927388
+push 9926376
+push 9923213
+push 9921394
+push 9919154
+push 9918082
+push 9916239
+pop acc1
+push 765
+push 9916239
+push 1023
+push 765
+jump_to
+xor
+print_top
+push 1
+add
+pop acc2
+if_not_zero
+jump_to
+exit
+push 2
+jump_to
+if_zero
+pop_out
+jump_to
+pop_out
+jump_to
+if_zero
+pop_out
+jump_to
+pop_out
+pop acc1
+push 1
+sub
+if_zero
+pop_out
+pop acc2
+push 2
+push 1
+jump_top
+push 2
+push 1
+add
+jump_to
+clone
+push 2
+sub
+if_zero
+pop_out
+push 1
+jump_to
+pop_out
+clone
+push 1
+modulo
+if_zero
+jump_to
+pop_out
+clone
+push 1
+push 1
+add
+clone
+pop acc1
+jump_to
+clone
+clone
+push 0
+push 10
+multiply
+pop acc2
+push 10
+modulo
+push 10
+add
+pop acc2
+pop acc1
+clone
+push 10
+sub
+if_zero
+pop_out
+push 1
+jump_to
+pop_out
+push 10
+push 10
+divide
+if_zero
+jump_to
+clone
+push 1
+jump_to
