@@ -1,3 +1,14 @@
+# Description
+## FriendSpaceBookPlusAllAccessRedPremium.com
+Label: reversing
+
+Having snooped around like the expert spy you were never trained to be, you found something that takes your interest: "Cookie/www.FriendSpaceBookPlusAllAccessRedPremium.com"  But unbeknownst to you, it was only the  700nm Wavelength herring rather than a delicious cookie that you could have found.   It looks exactly like a credential for another system.  You find yourself in search of a friendly book to read.
+
+Having already spent some time trying to find a way to gain more intelligence... and learn about those fluffy creatures, you (several)-momentarily divert your attention here.  It's a place of all the individuals in the world sharing large amounts of data with one another. Strangely enough, all of the inhabitants seem to speak using this weird pictorial language. And there is hot disagreement over what the meaning of an eggplant is.
+
+But not much Cauliflower here.  They must be very private creatures.  SarahH has left open some proprietary tools, surely running this will take you to them.  Decipher this language and move forth!
+
+# Solution
 The attachment is zip containing a `program` file and a `vm.py` file. Looking at the files, it appears that there is a stack based virtual machine implemented in `vm.py` which runs emoji based code located in `program`. If we just run the program `python3 vm.py program`, it begins to print out a url however it seems to stop after a bit. I initially thought that I would have to translate the program to figure out what it does and try to fix it however after waiting a bit, the program prints out more of the url. It seems that whatever the program is doing, takes longer and longer to calculate the result. After waiting long enough we can guess the url `http://emoji-t0anaxnr3nacpt4na.web.ctfcompetition.com`.
 
 The website appears to be a collection of pictures of cats. Each page has a picture and a set of links and each link leads to another page and so on. Using `scrapy`, I crawled all the links and downloaded all the images. Going through them, it doesn't look like any of the pictures have the flag in it, either in the image itself or in the binary. So maybe the guess is incorrect and there is still more in the url.

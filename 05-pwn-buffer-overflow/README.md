@@ -1,3 +1,10 @@
+# Description
+## STOP GAN
+Label: pwn
+
+Success, you've gotten the picture of your lost love, not knowing that pictures and the things you take pictures of are generally two seperate things, you think you've rescue them and their brethren by downloading them all to your ships hard drive. They're still being eaten, but this is a fact that has escaped you entirely. Your thoughts swiftly shift to revenge. It's important now to stop this program from destroying these "Cauliflowers" as they're referred to, ever again.
+
+# Solution
 This attachment is a zip file containing a `bof` binary and a `console.c` source file. The description for the task also includes the text `buffer-overflow.ctfcompetition.com 1337`. Looking at the source file, we see that the binary `bof` is run using qemu and then we have to send input into that program and cause it to crash. There is also a bonus flag if we can cause a controlled crash. To test locally I just ran `qemu-mipsel bof` which runs the program and shows the prompt `Cauliflower systems never crash >>`. Entering text into the prompt just closes it. Since the goal was to use a buffer overflow I decided to just input a lot of text into the program and with a long enough input, a segfault is created. Now all we have to do is try in on the actual program. So we connect to the server provided in the task `nc buffer-overflow.ctfcompetition.com 1337`, enter `run` then enter our long string of input. After a successful crash, it prints out the flag `CTF{Why_does_cauliflower_threaten_us}`
 
 Since there is another flag, I decided to take a look at decompiling the `bof` binary. For this I used `ghidra`. Since I don't have much experience with this, it was quite difficult to figure out everything, but after playing around with it for a while this was what I figured out. This is what I figured out about what the program looks like

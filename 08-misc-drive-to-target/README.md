@@ -1,3 +1,12 @@
+# Description
+## Drive to the target
+Label: coding
+
+Excellent work!  With your fine sleuthing skills, you managed to find a picture of the handsome creature with its pet biped.  At last friends and companionship may be near!
+
+Like all inhabitants of this world, you spend an inordinate amount of time on the site, stalking and comparing your life to that of others. The first thought that springs to your mind is "Why haven't I ever been to Mauritius on holiday?" followed swiftly by "What is a Mauritius anyway?" But after a while and with language successfully deciphered, you've made contact with the lifeform in the picture, you have a "date"? You're given the address of where to meet your potential interest. "1 Banana way, beware of the glass." An odd address, especially that last part. So how do you get there?  You land your ship and begin to search.
+
+# Solution
 This task is a link to the site `https://drivetothetarget.web.ctfcompetition.com`. The site contains two inputs for lattitude and longitude. Choosing values will tell you your speed and text if you are getting closer or further. It seems that the goal is to find the correct location but you can only move a bit at a time. Playing with the numbers, decrementing lat and lon gives us the message that we are getting closer. Some other important facts: When the message says that you traveled too fast, if you retry the same value, eventually it will work. Next, a new token is given in a hiden input field. With these facts, we can write a script that continuously decrements the lat and lon, and retries if it fails. It also appears that the token identifies your location which is how it calculates the distance you can travel.
 
 The script `drive.py` continuously decrements `lon` until the message says that we are moving away. Then it switches to decrementing `lat`. Something important that I didn't add is a check for the text `CTF` in case we find it as I was monitoring it mostly. I found the the default of `0.0001` increment worked well. This is marked as a 'coding' task but i'm not sure if just spamming a ton of calls is the right way to approach this. Maybe there is a way to calculate the token. It would also be better optimized if both lat an lon were decremented but I didn't know if that would work in case you had to decrement one more than the other.
