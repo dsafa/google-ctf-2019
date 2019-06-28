@@ -12,5 +12,7 @@ Never done a ctf or have any background in security before so I've decided to tr
 - [FriendSpaceBookPlusAllAccessRedPremium.com / reversing-emoji](/07-reversing-emoji/README.md)
 - [Drive to the target / misc-drive-to-target](/08-misc-drive-to-target/README.md)
 - [Cookie World Order / web-cwo-xss](/09-web-cwo-xss/README.md)
+- [Crypto Caulingo](/10-crypto-caulingo/README.md)
+- [Gate Lock / hardware-gatelock](/11-hardware-gatelock/README.md)
 
 ![](assets/map.png)
