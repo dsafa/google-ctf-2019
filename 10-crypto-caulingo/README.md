@@ -17,6 +17,20 @@ This task has a zip attachment which contains a `msg.txt` and a `project_dc.pdf`
 
 Now I have not fully wrapped my head around RSA so I'm just kinda reading up and trying to figure things out at this point. One thing I found when doing research was this database [factordb](http://factordb.com/index.php). Using that site, we dont find our `n` but it's still good to know. Other things to note is that using the value of e = `65537` is a standard. Lets take a look at the constraints we have: `|A × P - B × Q| < 10_000` and `1 ≤ A,B ≤ 1000`. In my research I also came accross this repo [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool) which contained scripts to help with these types of problems. In that repo there was a list of attacks and one of them was `Fermat's factorisation for close p and q`. That sounds similar to our situation where `P` and `Q` are close. `Fermat's factorization method factors N into p and q very quickly if p and q share half of their leading bits, i.e., if the gap between p and q is below the square root of p.`[5]. I tried it but it took a long time to run and didn't seem to work so I probably have something wrong. I tried a few other attempts but this task I couldn't really figure out so I would like to revisit it some time.
 
+**Edit** I looked at other writeups for this problem and I understand now
+
+`A*P + x = B*Q` and `N = PQ`, where `x` is some value `1<x<1000` rearranging gives
+```
+A/B + x = Q/P
+A/B + x = Q/N/Q
+A/B + x = Q**2/N
+N * (A/B + x) = Q**2
+sqrt(N * A/B + x) = Q
+sqrt(N * A/B) +- sqrt(x)
+```
+
+Now we just scan in the range `sqrt(N*A/B)` plus or minus `0..100` and check if it divides N perfectly as the only non 1 factors of N have to be P and Q.
+Takes about 15 minutes to find the flag `CTF{017d72f0b513e89830bccf5a36306ad944085a47}`
 
 - [[1] Basics of Cryptography Part I: RSA Encryption and Decryption](https://sahandsaba.com/cryptography-rsa-part-1.html)
 - [[2] RSA Algorithm](https://www.di-mgt.com.au/rsa_alg.html)

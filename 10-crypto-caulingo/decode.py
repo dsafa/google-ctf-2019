@@ -18,27 +18,27 @@ def sqrt(n):
 
 
 def find(target):
-    for p in filter(lambda x: x%2 == 1, range(target - 10000, target + 10000)):
+    for p in filter(lambda x: x%2 == 1, range(target - 100, target + 100)):
         if n % p == 0:
             q = n // p
             print("P: {}, Q: {}".format(p, q))
             return p, q
     return 0, 0
 
+def get_primes(n):
+    for a, b in itertools.combinations(range(1, 1001), 2):
+        s = sqrt(n * a // b)
+        p, q = find(s)
+        if p != 0:
+            print("Found with a: {}, b: {}".format(a, b))
+            return p, q
+    return 0, 0
+
 def decode(msg, n, d):
     return pow(msg, d, n)
 
-P = 0
-Q = 0
-for a, b in itertools.combinations(range(500, 1001), 2):
-    s = sqrt(n * a // b)
-    p, q = find(s)
-    if p != 0:
-        print("Found with a: {}, b: {}".format(a, b))
-        P = p
-        Q = q
-        break
 
+P, Q = get_primes(n)
 if P == 0:
     print("Did not find primes")
     exit()
