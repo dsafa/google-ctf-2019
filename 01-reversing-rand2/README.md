@@ -12,4 +12,4 @@ Ok well done. The console is on. It's asking for coordinates. Beating heavily on
 
 
 # Solution
-The attachment is a zip file containing a `log.txt` fle and a `rand2` program. Running `strings` on the binary shows the flag `CTF{welcome_to_googlectf}`
+The attachment is a zip file containing a `log.txt` file and a `rand2` program. Running `strings` on the binary shows the flag `CTF{welcome_to_googlectf}`
